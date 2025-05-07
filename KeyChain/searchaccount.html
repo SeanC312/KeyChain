@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Results</title>
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/argon2-browser/1.18.0/argon2-bundled.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuidv4.min.js"></script>
+  <script src="js/hash.js" defer></script>
+  <script src="js/encrypt.js" defer></script>
+  <script src="js/searchaccount.js" defer></script>
+
+
+</head>
+
+<!-- Top Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+        <li class="nav-item active"><a class="nav-link" href="main-page.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Logout</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More Actions</a>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="changemasterpassword.html">Change master account password</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <body>
+    <div class="container-fluid py-4 d-flex justify-content-center flex-column">
+      <h2 class="text-center mb-4">Search Results:</h2>
+      
+      <!-- Search Results List -->
+      <div class="d-flex justify-content-center">
+        <div id="search-results" class="list-group w-200" style="font-size:25px"></div> 
+      </div>
+      
+      <!-- No results message -->
+      <div id="no-results" class="text-center text-muted mt-4" style="display:none;">
+        No matching accounts found.
+      </div>
+    </div>
+  </body>
+  
+</html>

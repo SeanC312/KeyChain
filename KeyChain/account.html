@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Account - KeyChain</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Raleway:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Main CSS -->
+  <link href="css/styles.css" rel="stylesheet" />
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/argon2-browser/1.18.0/argon2-bundled.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuidv4.min.js"></script>
+  <script src="js/hash.js" defer></script>
+  <script src="js/account.js" defer></script>
+  <script src="js/encrypt.js" defer></script>
+  <script src="js/changepassword.js" defer></script>
+  <script src="js/deleteaccount.js" defer></script>
+  <script src="js/generatepassword.js" defer></script>
+  <script src="js/toclipboard.js" defer></script>
+
+  <!-- Credit for top navigation: https://startbootstrap.com/template/simple-sidebar -->
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      
+      <!-- Top Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+              <li class="nav-item active"><a class="nav-link" href="main-page.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="login.html">Logout</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More Actions</a>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="changemasterpassword.html">Change master account password</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Add Account Form -->
+      <div class="container-fluid d-flex flex-column align-items-center justify-content-center text-center" style="min-height: 100vh; padding-bottom:50px">
+
+        <h1 class="mb-4">
+          <img class="keylogo" src="assets/key.jpg" alt="Key Logo" style="max-width: auto; height: auto;" />
+        </h1>
+      
+        <p class="fs-4"><strong>Username:</strong> <span id="account-username"></span></p>
+        <p class="fs-4"><strong>Domain:</strong> <span id="account-domain"></span></p>
+        <p class="fs-4">
+            <strong>Password:</strong> 
+            <span id="account-password"></span>
+            <button id="copy-password-btn" class="btn btn-outline-secondary btn-sm">Copy to Clipboard</button>
+        </p>
+        <p class="fs-4"><strong>Last Edited:</strong> <span id="account-timestamp"></span></p>
+
+        <button id="change-password-btn" class="btn btn-danger">
+            Change Password
+        </button>
+
+        <div id="password-input-group" class="mt-3" style="display: none;">
+            <input type="password" id="password" class="form-control mb-2" placeholder="Enter new password" style="max-width: 300px; margin: 0 auto;" />
+            <button type="button" id="suggestPasswordBtn" class="btn btn-primary">Suggest Password</button>
+            <button id="submit-password-btn" class="btn btn-success">Submit</button>
+        </div>
+
+        <button id="delete-account-btn" class="btn btn-danger mt-4">
+            Delete Account
+        </button>
+
+        <button id="confirm-delete-btn" class="btn btn-outline-danger mt-2" style="display: none;">
+          Confirm Delete
+        </button>
+      
+        </div>
+    </div>
+  </div>
+</body>
+</html>

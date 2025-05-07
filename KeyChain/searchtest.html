@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Search Test</title>
+</head>
+<body>
+  <input type="text" id="searchinput" placeholder="Search term..." />
+  <button id="searchbutton">Search</button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const searchInput = document.getElementById("searchinput");
+      const searchButton = document.getElementById("searchbutton");
+
+      console.log("Loaded input:", searchInput);
+      console.log("Loaded button:", searchButton);
+
+      searchButton.addEventListener("click", () => {
+        const term = searchInput.value.trim();
+        console.log("Search term:", term);
+        if (term) {
+          localStorage.setItem("searchterm", term);
+          window.location.href = "searchaccount.html";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

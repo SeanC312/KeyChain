@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Argon2</title>
+  <script src="https://unpkg.com/argon2-browser@1.0.0/dist/argon2-browser.min.js"></script>
+</head>
+<body>
+  <button onclick="testHash()">Test Argon2</button>
+
+  <script>
+    async function testHash() {
+      const password = "my_secure_password";
+      const hash = await argon2.hash({
+        pass: password,
+        salt: crypto.getRandomValues(new Uint8Array(16)),
+        type: argon2.Argon2id,
+        hashLen: 32,
+        time: 3
+      });
+      console.log(hash);
+    }
+  </script>
+</body>
+</html>
