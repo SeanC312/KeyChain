@@ -3,7 +3,7 @@
 // Uses SerpAPI to get google image result
 $domain = $_GET['domain'];
 // API key used in demonstration, hidden to public
-$apiKey = '***REMOVED***';
+$apiKey = '123abc';
 $query = urlencode($domain);
 $url = "https://serpapi.com/search.json?q=$query&tbm=isch&api_key=$apiKey";
 
